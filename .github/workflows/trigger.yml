@@ -21,5 +21,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           repository: 'tvamsi66/devops'
+          token: ${{ secrets.PAT }}
           workflow: 'external_workflow.yml'
           data: 'Sample data to pass to the triggered workflow'
