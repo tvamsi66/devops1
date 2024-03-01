@@ -30,7 +30,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           repository: 'tvamsi66/devops'
-          token: ${{ secrets.ACCESS_TOKEN_DEVOPS }}
           event-type: 'akamai-deploy-workflow'
           client-payload: |
            {
