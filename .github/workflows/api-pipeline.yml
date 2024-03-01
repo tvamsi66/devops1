@@ -1,17 +1,16 @@
-name: Trigger Devops Private Workflow
+name: Api Pipeline Workflow
 
 on:
   workflow_dispatch:
-    inputs:
-      repository:
-        description: 'Name of the repository to trigger the workflow in (e.g., owner/repo)'
-        required: true
-      workflow:
-        description: 'Type of the event to trigger in the external repository (e.g., trigger-external-workflow)'
-        required: true
-      user_input_data:
-        description: 'Optional data to pass to the triggered workflow'
+    inputs:      
+      akamai_network:
+        description: 'Select Akamai network'
         required: false
+        default: 'tst1'
+        type: choice
+        options:
+          - tst1
+          - stg1
 
 jobs:
   trigger:
@@ -22,5 +21,5 @@ jobs:
         with:
           repository: 'tvamsi66/devops'
           token: ${{ secrets.ACCESS_TOKEN_DEVOPS }}
-          event-type: 'trigger-devops-private-workflow'
+          event-type: 'trigger-devops-main-workflow'
           client-payload: '{"data": "${{ github.event.inputs.user_input_data }}"}'
