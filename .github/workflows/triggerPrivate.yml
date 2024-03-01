@@ -1,4 +1,4 @@
-name: Trigger External Workflow
+name: Trigger Private Workflow
 
 on:
   workflow_dispatch:
