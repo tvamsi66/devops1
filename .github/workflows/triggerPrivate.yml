@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       repository:
-        description: tvamsi66/devops
+        description: 'Name of the repository to trigger the workflow in (e.g., owner/repo)'
         required: true
       workflow:
-        description: external_workflow
+        description: 'Type of the event to trigger in the external repository (e.g., trigger-external-workflow)'
         required: true
       data:
         description: 'Optional data to pass to the triggered workflow'
