@@ -1,0 +1,26 @@
+name: Trigger External Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: tvamsi66/devops
+        required: true
+      workflow:
+        description: external_workflow
+        required: true
+      data:
+        description: 'Optional data to pass to the triggered workflow'
+        required: false
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger workflow in another repository
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          repository: 'tvamsi66/devops'
+          token: ${{ secrets.PAT }}
+          workflow: 'external_workflow.yml'
+          data: 'Sample data to pass to the triggered workflow'
