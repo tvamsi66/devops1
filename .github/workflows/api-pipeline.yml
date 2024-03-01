@@ -23,7 +23,7 @@ on:
           - stg1
 
 jobs:
-  trigger:
+  invoke-akamai-deploy-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Docker Build and Deploy to Akamai workflow
@@ -31,7 +31,7 @@ jobs:
         with:
           repository: 'tvamsi66/devops'
           token: ${{ secrets.ACCESS_TOKEN_DEVOPS }}
-          event-type: 'trigger-akamai-deploy-workflow'
+          event-type: 'akamai-deploy-workflow'
           client-payload: |
            {
               "akamai_network": "${{ github.event.inputs.akamai_network }}",
