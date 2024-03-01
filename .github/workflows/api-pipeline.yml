@@ -6,6 +6,15 @@ on:
       akamai_network:
         description: 'Select Akamai network'
         required: false
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
+          
+      environment:
+        description: 'Select Environment'
+        required: false
         default: 'tst1'
         type: choice
         options:
