@@ -23,4 +23,4 @@ jobs:
           repository: 'tvamsi66/devops'
           token: ${{ secrets.ACCESS_TOKEN_DEVOPS }}
           event-type: 'external_workflow.yml'
-          client-payload: 'Sample data to pass to the triggered workflow'
+          client-payload: '{"data": "Sample data to pass to the triggered workflow"}'
