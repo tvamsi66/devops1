@@ -31,7 +31,7 @@ jobs:
         with:
           repository: 'tvamsi66/devops'
           token: ${{ secrets.ACCESS_TOKEN_DEVOPS }}
-          event-type: 'trigger-devops-main-workflow'
+          event-type: 'trigger-akamai-deploy-workflow'
           client-payload: |
            {
               "akamai_network": "${{ github.event.inputs.akamai_network }}",
