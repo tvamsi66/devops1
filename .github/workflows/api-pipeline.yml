@@ -25,6 +25,9 @@ on:
 jobs:
   invoke-akamai-deploy-workflow:
     runs-on: ubuntu-latest
+    env: 
+      PIPELINE_NAME: "api-rccl-com"
+      PROPERTY_NAME: "api.rccl.com"
     steps:
       - name: Trigger Docker Build and Deploy to Akamai workflow
         uses: peter-evans/repository-dispatch@v2
@@ -35,5 +38,7 @@ jobs:
           client-payload: |
            {
               "akamai_network": "${{ github.event.inputs.akamai_network }}",
-              "environment": "${{ github.event.inputs.environment }}"
+              "environment": "${{ github.event.inputs.environment }}",
+              "pipeline_name": "$PIPELINE_NAME",
+              "property_name": "$PROPERTY_NAME"
            }
