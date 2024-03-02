@@ -38,10 +38,4 @@ jobs:
           repository: 'tvamsi66/devops'
           event-type: 'akamai-deploy-workflow'          
           token: ${{ secrets.ACCESS_TOKEN_DEVOPS }}
-          client-payload: |
-           {
-              "akamai_network": "${{ github.event.inputs.akamai_network }}",
-              "environment": "${{ github.event.inputs.environment }}",
-              "pipeline_name": "${PIPELINE_NAME}",
-              "property_name": "${PROPERTY_NAME}"
-           }
+          client-payload: ${{ steps.set_payload.outputs.payload }}
