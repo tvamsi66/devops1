@@ -39,6 +39,6 @@ jobs:
            {
               "akamai_network": "${{ github.event.inputs.akamai_network }}",
               "environment": "${{ github.event.inputs.environment }}",
-              "pipeline_name": "$PIPELINE_NAME",
-              "property_name": "$PROPERTY_NAME"
+              "pipeline_name": $PIPELINE_NAME,
+              "property_name": $PROPERTY_NAME
            }
